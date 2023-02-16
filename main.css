@@ -11,6 +11,8 @@ header {
     text-align: center;
 }
 
+/* navigation bar */
+
 nav {
   background-color: #333;
   height: 50px;
@@ -28,7 +30,7 @@ ul {
 }
 
 li {
-  margin: 0 10px;
+  margin: 0 5%;
 }
 
 a {
@@ -41,6 +43,114 @@ a {
 }
 
 a:hover {
+  background-color: #555;
+}
+
+/* home */
+
+.hero-section {
+  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("homeimage.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 20vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-section h1 {
+  color: #fff;
+  font-size: 2rem;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+}
+
+/* gallery */
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1000px;
+  margin: 10px auto 0;
+  padding: 0 10px;
+}
+
+.image {
+  width: calc(33.33% - 10px);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.image img {
+  max-width: 100%;
+  height: auto;
+}
+
+.image h3 {
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+.image p {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+.image button {
+  background-color: #333;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+
+/* photo upload form */
+
+form {
+    margin: 0 auto;
+}
+
+.upload-form {
+  margin: 50px auto 0;
+  max-width: 400px;
+  text-align: center;
+}
+
+label {
+  display: block;
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+input[type="file"] {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+button[type="submit"] {
+  background-color: #333;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+button[type="submit"]:hover {
   background-color: #555;
 }
 

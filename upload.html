@@ -24,11 +24,18 @@
                 <li><a href="gallery.html">Gallery</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <li><a href="file_upload">File Upload</a></li>
+                <li><a href="upload.html">File Upload</a></li>
               </ul>
             </nav>
         </header>
-
+    
+        <h1>Photo Upload Form</h1>
+    <form action="upload.php" method="post" enctype="multipart/form-data">
+        <label for="file">Choose a file to upload:</label>
+        <input type="file" name="file" id="file" onchange="previewFile()"><br><br>
+        <img src="" alt="File Preview" id="previewImg" style="max-width: 200px; max-height: 200px; display: none;">
+        <input type="submit" value="Upload File">
+    </form>
         
     </body>
 </html>
