@@ -4,7 +4,7 @@
 <br><br>
 
 <div align="center">
-  <h1>tncanvasprints.com
+  <h1>www.canvastn.com
     <br><br>
     <br><br>
   </h1>
@@ -12,7 +12,7 @@
 
 <div align="center">
   <a href="#about">About</a> •
-  <a href="#pages">Iterations</a> •
+  <a href="#pages">Pages</a> •
   <a href="#serverinfo">Server Information</a> •
   <a href="#datahandling">Data Handling</a> •
 
@@ -30,11 +30,7 @@
 
 
 # About
-The goal of this project is to develop a network of sensors that collects and aggregates data into something that provides useful insights to the SAE Baja team. 
-
-This inital goal was accomplished through the use Sensors, Arduinos, and a Raspberry Pi. 
-
-The Ardiunos used the sensors to collect raw data during the duration of each test run. The Arduino would then transfer this raw data to the Raspberry Pi. The Raspberry Pi aggregates the data from both of the Ardiunos and calculates the desired data points. Once the test run is over, the Raspberry Pi will export the data in human-readable formats. 
+The goal of this project is to create and deploy a website utilizing LAMP Stack.
 
 ### Client: 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Arvin Sanchez
@@ -70,14 +66,6 @@ File Upload Page will contain a user submission form to upload a single image fo
 
 <br><br>
 
-## Issues
-One of the issues faced during Iteration 6 was the Raspberry Pi put a default user/password that wasn't clearing out.
-
-This was solved by fixing the error in the code and clearing out the user/password.
-
-<br><br>
-<br><br>
-
 # Server Information
 
 Will be run on Apache2 for static web page load
@@ -92,17 +80,6 @@ Website contained within /var/www/
 # Data Handling
 Forms will be submitted and queried into mySQL Database in conjunction with Python.  Transaction and contact forms TBD
 <br><br>
-
-
-
-
-
-
-
-
-
-
-
 
 
 
