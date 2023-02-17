@@ -7,9 +7,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Connect to the database
     $host = 'localhost';
-    $username = 'root';
+    $username = 'admin';
     $password = 'password';
-    $database = 'form_schema';
+    $database = 'names';
 
     $conn = new mysqli($host, $username, $password, $database);
 
