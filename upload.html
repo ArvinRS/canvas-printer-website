@@ -8,6 +8,26 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+        <script>
+            function previewFile() {
+                var preview = document.querySelector('#previewImg');
+
+                preview.style.display = "block";
+                preview.style.margin = "0 auto 40px";
+
+                var file = document.querySelector('input[type=file]').files[0];
+                var reader = new FileReader();
+
+                reader.addEventListener("load", function () {
+                    preview.src = reader.result;
+                    preview.style.display = "block";
+                }, false);
+
+                if (file) {
+                    reader.readAsDataURL(file);
+                }
+            }
+        </script>
     </head>
     <body>
         <header>
@@ -21,21 +41,41 @@
             <nav>
               <ul>
                 <li><a href="index.html">Home</a></li>
+                <li><a href="upload.html">Photo Upload</a></li>
+                <li><a href="shop.html">Shop</a></li>
                 <li><a href="gallery.html">Gallery</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <li><a href="upload.html">File Upload</a></li>
               </ul>
             </nav>
         </header>
+
+        <div style="text-align: center; padding: 0 25%; margin-top: 100px;">
     
-        <h1>Photo Upload Form</h1>
-    <form action="upload.php" method="post" enctype="multipart/form-data">
-        <label for="file">Choose a file to upload:</label>
-        <input type="file" name="file" id="file" onchange="previewFile()"><br><br>
-        <img src="" alt="File Preview" id="previewImg" style="max-width: 200px; max-height: 200px; display: none;">
-        <input type="submit" value="Upload File">
-    </form>
-        
+            <h1>Photo Upload Form</h1>
+            <form action="upload.php" method="post" enctype="multipart/form-data">
+                <label for="file" style="margin-bottom: 20px;">Choose a file to upload:</label>
+                <input type="file" name="file" id="file" onchange="previewFile()"><br><br>
+                <img src="" alt="File Preview" id="previewImg" style="max-width: 200px; max-height: 200px; display: none;">
+                <br>
+                <label for="comments">Comments/Special Instructions:</label>
+                <br>
+                <textarea id="comments" name="comments" rows="4" cols="50"></textarea>
+                <br><br>
+                <label for="canvas">Canvas Dimensions:</label>
+                <br>
+                <select id="canvas" name="canvas">
+                    <option value="12x18">12x18</option>
+                    <option value="16x22" selected>16x22 (Most Popular)</option>
+                    <option value="18x25">18x25</option>
+                    <option value="20x30">20x30</option>
+                    <option value="24x35">24x35</option>
+                    <option value="30x40">30x40</option>
+                    <option value="34x45">34x45</option>
+                </select>
+                <br><br>
+                <input type="submit" value="Upload File">
+            </form>
+        </div> 
     </body>
 </html>

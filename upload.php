@@ -1,37 +1,37 @@
 <?php
-  $target_dir = "uploads/"; // specify the directory where the file should be uploaded
-  $target_file = $target_dir . basename($_FILES["file"]["name"]); // get the file name
-  $uploadOk = 1;
-  $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION)); // get the file extension
 
-  // Check if file already exists
-  if (file_exists($target_file)) {
-    echo "Sorry, the file already exists.";
-    $uploadOk = 0;
-  }
+if(isset($_FILES['image'])) {
+	$image = $_FILES['image'];
+	$filename = $image['name'];
+	$filetype = $image['type'];
+	$filetemp = $image['tmp_name'];
+	
+	if($filetype == 'image/heic') {
+		// convert HEIC to JPEG
+		$imagick = new \Imagick($filetemp);
+		$imagick->setImageFormat('jpeg');
+		$filetemp = $imagick->getImageBlob();
+		$filetype = 'image/jpeg';
+		$filename = pathinfo($filename, PATHINFO_FILENAME) . '.jpg';
+	}
 
-  // Check file size
-  if ($_FILES["file"]["size"] > 5000000) {
-    echo "Sorry, your file is too large.";
-    $uploadOk = 0;
-  }
+	// insert into database
+	$servername = "localhost";
+	$username = "admin";
+	$password = "password";
+	$dbname = "names";
 
-  // Allow certain file formats
-  if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-  && $imageFileType != "gif" ) {
-    echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
-    $uploadOk = 0;
-  }
+	$conn = new mysqli($servername, $username, $password, $dbname);
 
-  // Check if $uploadOk is set to 0 by an error
-  if ($uploadOk == 0) {
-    echo "Sorry, your file was not uploaded.";
-  // if everything is ok, try to upload file
-  } else {
-    if (move_uploaded_file($_FILES["file"]["tmp_name"], $target_file)) {
-      echo "The file ". basename( $_FILES["file"]["name"]). " has been uploaded.";
-    } else {
-      echo "Sorry, there was an error uploading your file.";
-    }
-  }
+	if ($conn->connect_error) {
+		die("Connection failed: " . $conn->connect_error);
+	}
+
+	$stmt = $conn->prepare("INSERT INTO images (name, content, type) VALUES (?, ?, ?)");
+	$stmt->bind_param("sss", $filename, $filetemp, $filetype);
+	$stmt->execute();
+	$stmt->close();
+
+	$conn->close();
+}
 ?>

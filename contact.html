@@ -21,17 +21,31 @@
             <nav>
               <ul>
                 <li><a href="index.html">Home</a></li>
+                <li><a href="upload.html">Photo Upload</a></li>
+                <li><a href="shop.html">Shop</a></li>
                 <li><a href="gallery.html">Gallery</a></li>
                 <li><a href="about.html">About Us</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="test2.php">File Upload</a></li>
+                <li><a href="contactForm.php">Contact</a></li>
               </ul>
             </nav>
         </header>
 
-        <h1>Phone: (615)-310-9150</h1>
-        <h1>email: info@tncanvasprints.com</h1>
+        <div style="text-align: center;">
 
-        
+            <h1>Phone: (615)-310-9150</h1>
+            <h1>email: info@tncanvasprints.com</h1>
+
+            <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+                <label for="first_name">First Name:</label>
+                <input type="text" id="first_name" name="first_name"><br><br>
+                <label for="last_name">Last Name:</label>
+                <input type="text" id="last_name" name="last_name"><br><br>
+                <label for="phone_number">Phone Number:</label>
+                <input type="tel" id="phone_number" name="phone_number"><br><br>
+                <label for="comment">Comment:</label>
+                <textarea id="comment" name="comment"></textarea><br><br>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
     </body>
 </html>
