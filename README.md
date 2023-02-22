@@ -11,9 +11,9 @@
 <div align="center">
   <a href="#about">About</a> •
   <a href="#pages">Pages</a> •
-  <a href="#serverinformation">Server Information</a> •
-  <a href="#softwareinformation">Software Information</a> •
-  <a href="#datahandling">Data Handling</a> •
+  <a href="#server information">Server Information</a> •
+  <a href="#software information">Software Information</a> •
+  <a href="#data handling">Data Handling</a> •
 
 </div>
 <br><br>
@@ -56,10 +56,10 @@ File Upload Page will contain a user submission form to upload a single image fo
 
 # Server Information
 
-Google Cloud Platform's Compute Engine.
-VM Instance: lamp-stack (e2-medium)
-OS: Debian-10-Buster
-CPU: x86/64 Intel Broadwell
+Google Cloud Platform's Compute Engine.__
+VM Instance: lamp-stack (e2-medium)__
+OS: Debian-10-Buster__
+CPU: x86/64 Intel Broadwell__
 
 ## Creating Default Document
 
@@ -68,11 +68,11 @@ Website contained within /var/www/
 <br><br>
 
 # Software Information
-Web Server: Apache2
-Internal Firewall Setup: UFW
-Database: MariaDB (mySQL)
-SSL Certification: Python Package
-Repository handling: Git
+Web Server: Apache2__
+Internal Firewall Setup: UFW__
+Database: MariaDB (mySQL)__
+SSL Certification: Python Package__
+Repository handling: Git__
 Notification and Automation: Python (TODO)
 
 <br><br>
