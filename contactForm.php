@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Submit Form to MariaDB Database Table</title>
+	<title>Contact Form Submission</title>
 </head>
 <body>
-	<h1>Submit Form to MariaDB Database Table</h1>
+	<h1>Contact Form Submission</h1>
 	<h2>Phone: (615)-310-9158</h2>
-	<h2>E-mail: info@canvastn.com</h2>
+	<h2>E-mail: arvin0133@yahoo.com</h2>
 
 	<?php
 	// Check if the form has been submitted
