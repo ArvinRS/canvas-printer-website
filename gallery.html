@@ -8,6 +8,75 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+
+        <style>
+            /* Style for the container that holds the image containers */
+            .image-container-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            }
+
+            /* Style for image containers */
+            .image-container {
+            display: inline-block;
+            margin-bottom: 20px;
+            flex-basis: calc(33.33% - 10px); /* set width for 3 images per row and subtract margin */
+            }
+
+            /* Style for images */
+            img {
+              max-width: 10%;
+              height: auto;
+            }
+            
+            /* Style for the icon container */
+            .icon {
+                width: 50px;
+                height: 50px;
+                font-size: 24px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background-color: rgba(0, 0, 0, 0);
+                color: #fff;
+                padding: 10px;
+                border-radius: 50%;
+                cursor: pointer;
+            }
+            
+            /* Style for the modal window */
+            .modal {
+              display: none;
+              position: fixed;
+              z-index: 1;
+              left: 0;
+              top: 0;
+              width: 100%;
+              height: 100%;
+              overflow: auto;
+              background-color: rgba(0,0,0,0.9);
+            }
+            
+            /* Style for the modal content */
+            .modal-content {
+              display: block;
+              margin: 50px auto;
+              max-width: 80%;
+            }
+            
+            /* Style for the close button */
+            .close-btn {
+              position: absolute;
+              top: 10px;
+              right: 10px;
+              color: #fff;
+              font-size: 30px;
+              font-weight: bold;
+              cursor: pointer;
+            }
+          </style>
     </head>
     <body>
         <header>
@@ -30,28 +99,72 @@
             </nav>
         </header>
 
-        <div class="gallery">
-        <div class="image">
-            <img src="img1.jpg" alt="Image 1">
-            <h3>Product 1</h3>
-            <p>Description of product 1</p>
-            <button>Add to Cart</button>
-        </div>
-        <div class="image">
-            <img src="img2.jpg" alt="Image 2">
-            <h3>Product 2</h3>
-            <p>Description of product 2</p>
-            <button>Add to Cart</button>
-        </div>
-        <div class="image">
-            <img src="img3.jpg" alt="Image 2">
-            <h3>Product 3</h3>
-            <p>Description of product 2</p>
-            <button>Add to Cart</button>
-        </div>
-        
+        <div class=""image-container-wrapper">
+            <div class="image-container">
+                        <img src="img/gallery1.jpg" alt="Image 1">
+                        <div class="icon">
+                        <i class="fas fa-expand"></i>
+                        </div>
+                    </div>
+                    
+            <div class="image-container">
+                <img src="img/gallery2.jpg" alt="Image 2">
+                <div class="icon">
+                <i class="fas fa-expand"></i>
+                </div>
+            </div>
+                    
+            <div class="image-container">
+                <img src="img/gallery3.jpg" alt="Image 3">
+                <div class="icon">
+                <i class="fas fa-expand"></i>
+                </div>
+            </div>
+
+            <!-- <div class="image-container">
+                <img src="img/img2.jpg" alt="Image 4">
+                <div class="icon">
+                <i class="fas fa-expand"></i>
+                </div>
+            </div> -->
             
-          <!-- Add more image elements as needed -->
         </div>
+
+        <div class="modal">
+                <span class="close-btn">&times;</span>
+                <img class="modal-content" id="modal-image">
+        </div>
+          
+          <script src="https://kit.fontawesome.com/1234567890.js" crossorigin="anonymous"></script>
+          <script>
+            // Get all the image containers and add a click event listener to each
+            var imageContainers = document.querySelectorAll(".image-container");
+            for (var i = 0; i < imageContainers.length; i++) {
+              imageContainers[i].addEventListener("click", function() {
+                // Get the clicked image and its alt text
+                var clickedImage = this.querySelector("img");
+                var altText = clickedImage.getAttribute("alt");
+                
+                // Get the modal content and set the clicked image as its source
+                var modalContent = document.getElementById("modal-image");
+                modalContent.src = clickedImage.src;
+                
+                // Display the modal window
+                var modal = document.querySelector(".modal");
+                modal.style.display = "block";
+                
+                // Set the alt text for the modal image
+                modalContent.alt = altText;
+              });
+            }
+            
+            // Add a click event listener to the close button
+            var closeBtn = document.querySelector(".close-btn");
+            closeBtn.addEventListener("click", function() {
+              // Hide the modal window
+              var modal = document.querySelector(".modal");
+              modal.style.display = "none";
+            });
+          </script>
     </body>
 </html>
