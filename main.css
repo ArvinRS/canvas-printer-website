@@ -194,12 +194,18 @@ footer {
   padding: 20px;
 }
 
+.footer__content-nav {
+  width: 60%;
+}
+
 .footer__content-nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
-  gap: 10px;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 
 .footer__content-nav li {
