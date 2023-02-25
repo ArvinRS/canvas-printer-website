@@ -2,6 +2,8 @@
 <html>
 	<head>
 		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+        <meta name="description" content="Contact form for CanvasTN">
 				<title>Canvas TN | Contact</title>
 				<link rel="stylesheet" href="main.css">  
 				

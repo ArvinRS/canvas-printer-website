@@ -2,6 +2,8 @@
 <html>
     <head>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <meta name="description" content="Photo upload form for custom canvas prints.">
         <title>Canvas TN | File Upload</title>
         <link rel="stylesheet" href="main.css">  
         
