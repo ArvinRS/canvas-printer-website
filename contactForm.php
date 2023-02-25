@@ -92,15 +92,16 @@
 				<nav class="footer__content-nav">
 					<ul>
 					<li><a href="index.html">Home</a></li>
-					<li><a href="fileUpload.html">Photo Upload</a></li>
+					<li><a href="fileUpload.php">Photo Upload</a></li>
 					<li><a href="shop.html">Shop</a></li>
 					<li><a href="gallery.html">Gallery</a></li>
 					<li><a href="about.html">About Us</a></li>
-					<li><a href="contactForm.html">Contact</a></li>
+					<li><a href="contactForm.php">Contact</a></li>
 					</ul>
 				</nav>
 				<div class="footer__content-contact">Phone: (615)-310-9150</div>
-				<div class="footer__content-contact">email: arvin0133@yahoo.com</div>			</div>
+				<div class="footer__content-contact">email: arvin0133@yahoo.com</div>			
+		</div>
         </footer>
 	</body>
 </html>
